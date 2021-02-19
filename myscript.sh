@@ -43,14 +43,14 @@ NAME="Bob"
 
 #COMPARISON 
 
-NUM1=31
-NUM2=5
-if [  "$NUM1" -gt "$NUM2" ]
-then 
-    echo "$NUM1 is greater than $NUM2"
-else 
-    echo "$NUM1 is less than $NUM2"
-fi 
+# NUM1=31
+# NUM2=5
+# if [  "$NUM1" -gt "$NUM2" ]
+# then 
+#     echo "$NUM1 is greater than $NUM2"
+# else 
+#     echo "$NUM1 is less than $NUM2"
+# fi 
 
 
 ########
@@ -67,6 +67,13 @@ fi
 
 
 #FILE CONDITION 
+# FILE="test.txt"
+# if [ -e "$FILE" ]
+# then
+#     echo "$FILE is a file"
+# else
+#     echo "$FILE does NOT exist"
+# fi
 
 ########
 # -d file   True if the file is a directory
@@ -79,3 +86,19 @@ fi
 # -w    True if the file is writable
 # -x    True if the file is an executable
 ########
+
+
+#CASE STATEMENT 
+read -p "Are you 21 or over? Y/N" ANSWER 
+case "$ANSWER" in 
+    [yY] | [yY][eE][sS])
+        echo "You can have a beer :)"
+        ;;
+    [nN] | [nN][oO])
+        echo "Sorry no drinking"
+        ;;
+    *)
+        echo "Please enter y/yes or n/no"
+        ;;
+    
+esac
